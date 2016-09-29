@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F34BCBD1D8AE929009C2B38 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F34BCBC1D8AE929009C2B38 /* player.png */; };
+		3F34BCBF1D8AEDB6009C2B38 /* Bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F34BCBE1D8AEDB6009C2B38 /* Bullet.png */; };
+		3F8397AF1D8C3925003F68E4 /* PurplePlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8397AE1D8C3925003F68E4 /* PurplePlayer.png */; };
+		3F8397B11D8C3935003F68E4 /* YellowPlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8397B01D8C3935003F68E4 /* YellowPlayer.png */; };
+		3F8397B31D8C393D003F68E4 /* TDS:Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8397B21D8C393D003F68E4 /* TDS:Ground.png */; };
+		3FBD9C5D1D9C916E00F355B2 /* TDSIconFinal in Resources */ = {isa = PBXBuildFile; fileRef = 3FBD9C5C1D9C916E00F355B2 /* TDSIconFinal */; };
+		3FBD9C5F1D9C91DA00F355B2 /* TDS:Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBD9C5E1D9C91DA00F355B2 /* TDS:Player.png */; };
+		3FBE3B421D92B999005C15E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE3B411D92B999005C15E1 /* HomeViewController.swift */; };
+		3FBE3B441D92D3A6005C15E1 /* Shooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE3B431D92D3A6005C15E1 /* Shooter.swift */; };
+		3FF435341D941F610035C33A /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF435331D941F610035C33A /* MPCManager.swift */; };
 		958C0C961D8A086D000FFB6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C0C951D8A086D000FFB6B /* AppDelegate.swift */; };
 		958C0C981D8A086D000FFB6B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 958C0C971D8A086D000FFB6B /* GameScene.sks */; };
 		958C0C9A1D8A086D000FFB6B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C0C991D8A086D000FFB6B /* GameScene.swift */; };
@@ -36,6 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F34BCBC1D8AE929009C2B38 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
+		3F34BCBE1D8AEDB6009C2B38 /* Bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bullet.png; sourceTree = "<group>"; };
+		3F8397AE1D8C3925003F68E4 /* PurplePlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PurplePlayer.png; sourceTree = "<group>"; };
+		3F8397B01D8C3935003F68E4 /* YellowPlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowPlayer.png; sourceTree = "<group>"; };
+		3F8397B21D8C393D003F68E4 /* TDS:Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TDS:Ground.png"; sourceTree = "<group>"; };
+		3FBD9C5C1D9C916E00F355B2 /* TDSIconFinal */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TDSIconFinal; sourceTree = "<group>"; };
+		3FBD9C5E1D9C91DA00F355B2 /* TDS:Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TDS:Player.png"; sourceTree = "<group>"; };
+		3FBE3B411D92B999005C15E1 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3FBE3B431D92D3A6005C15E1 /* Shooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shooter.swift; sourceTree = "<group>"; };
+		3FF435331D941F610035C33A /* MPCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
 		958C0C921D8A086D000FFB6B /* SpriteKitGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteKitGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		958C0C951D8A086D000FFB6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		958C0C971D8A086D000FFB6B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -78,6 +98,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F34BCBB1D8AE901009C2B38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FBD9C5C1D9C916E00F355B2 /* TDSIconFinal */,
+				3F8397AE1D8C3925003F68E4 /* PurplePlayer.png */,
+				3FBD9C5E1D9C91DA00F355B2 /* TDS:Player.png */,
+				3F34BCBE1D8AEDB6009C2B38 /* Bullet.png */,
+				3F34BCBC1D8AE929009C2B38 /* player.png */,
+				3F8397B01D8C3935003F68E4 /* YellowPlayer.png */,
+				3F8397B21D8C393D003F68E4 /* TDS:Ground.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		958C0C891D8A086D000FFB6B = {
 			isa = PBXGroup;
 			children = (
@@ -102,13 +136,17 @@
 			isa = PBXGroup;
 			children = (
 				958C0C951D8A086D000FFB6B /* AppDelegate.swift */,
-				958C0C971D8A086D000FFB6B /* GameScene.sks */,
-				958C0C991D8A086D000FFB6B /* GameScene.swift */,
+				3FF435331D941F610035C33A /* MPCManager.swift */,
+				3FBE3B411D92B999005C15E1 /* HomeViewController.swift */,
 				958C0C9B1D8A086D000FFB6B /* GameViewController.swift */,
+				958C0C991D8A086D000FFB6B /* GameScene.swift */,
+				958C0C971D8A086D000FFB6B /* GameScene.sks */,
+				3FBE3B431D92D3A6005C15E1 /* Shooter.swift */,
 				958C0C9D1D8A086D000FFB6B /* Main.storyboard */,
 				958C0CA01D8A086D000FFB6B /* Assets.xcassets */,
 				958C0CA21D8A086D000FFB6B /* LaunchScreen.storyboard */,
 				958C0CA51D8A086D000FFB6B /* Info.plist */,
+				3F34BCBB1D8AE901009C2B38 /* Supporting Files */,
 			);
 			path = SpriteKitGame;
 			sourceTree = "<group>";
@@ -199,13 +237,17 @@
 				TargetAttributes = {
 					958C0C911D8A086D000FFB6B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 5Q75DE3GYF;
+						LastSwiftMigration = 0800;
 					};
 					958C0CA91D8A086D000FFB6B = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 958C0C911D8A086D000FFB6B;
 					};
 					958C0CB41D8A086E000FFB6B = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 958C0C911D8A086D000FFB6B;
 					};
 				};
@@ -235,9 +277,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F34BCBD1D8AE929009C2B38 /* player.png in Resources */,
+				3F34BCBF1D8AEDB6009C2B38 /* Bullet.png in Resources */,
+				3FBD9C5F1D9C91DA00F355B2 /* TDS:Player.png in Resources */,
 				958C0C981D8A086D000FFB6B /* GameScene.sks in Resources */,
 				958C0CA41D8A086D000FFB6B /* LaunchScreen.storyboard in Resources */,
+				3F8397B11D8C3935003F68E4 /* YellowPlayer.png in Resources */,
+				3F8397AF1D8C3925003F68E4 /* PurplePlayer.png in Resources */,
 				958C0CA11D8A086D000FFB6B /* Assets.xcassets in Resources */,
+				3F8397B31D8C393D003F68E4 /* TDS:Ground.png in Resources */,
+				3FBD9C5D1D9C916E00F355B2 /* TDSIconFinal in Resources */,
 				958C0C9F1D8A086D000FFB6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +314,10 @@
 			files = (
 				958C0C9A1D8A086D000FFB6B /* GameScene.swift in Sources */,
 				958C0C9C1D8A086D000FFB6B /* GameViewController.swift in Sources */,
+				3FF435341D941F610035C33A /* MPCManager.swift in Sources */,
+				3FBE3B441D92D3A6005C15E1 /* Shooter.swift in Sources */,
 				958C0C961D8A086D000FFB6B /* AppDelegate.swift in Sources */,
+				3FBE3B421D92B999005C15E1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,10 +461,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SpriteKitGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.SpriteKitGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -420,10 +474,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SpriteKitGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.SpriteKitGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -436,6 +492,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.SpriteKitGameTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpriteKitGame.app/SpriteKitGame";
 			};
 			name = Debug;
@@ -448,6 +505,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.SpriteKitGameTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpriteKitGame.app/SpriteKitGame";
 			};
 			name = Release;
@@ -460,6 +518,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.SpriteKitGameUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SpriteKitGame;
 			};
 			name = Debug;
@@ -471,6 +530,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.SpriteKitGameUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SpriteKitGame;
 			};
 			name = Release;
@@ -494,6 +554,7 @@
 				958C0CC01D8A086E000FFB6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		958C0CC11D8A086E000FFB6B /* Build configuration list for PBXNativeTarget "SpriteKitGameTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +563,7 @@
 				958C0CC31D8A086E000FFB6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		958C0CC41D8A086E000FFB6B /* Build configuration list for PBXNativeTarget "SpriteKitGameUITests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +572,7 @@
 				958C0CC61D8A086E000FFB6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
