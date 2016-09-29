@@ -180,10 +180,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         bullet.zRotation = rotation
         
         let angle = rotation
-        
-        //through testing, cos and sin are reversed in terms of x and y
-        let newdy = sin(angle)
-        let newdx = cos(angle)
         bullet.position = bulletPosition
         bullet.name = "bullet"
         bullet.physicsBody = SKPhysicsBody(texture: bullet.texture!, size: bullet.size)
