@@ -39,6 +39,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     var powerUp = SKSpriteNode(color: UIColor.red, size: CGSize(width: 2, height: 2))
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var outputStream : OutputStream!
+    var singlePlayer : Bool = false
     
     override func didMove(to view: SKView) {
         
@@ -198,10 +199,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         shooter.physicsBody?.affectedByGravity = false
         shooter.physicsBody?.contactTestBitMask = (shooter.physicsBody?.collisionBitMask)!
         
-        shooter2 = SKSpriteNode(imageNamed: "player.png")
-        shooter2.position = shooter.position
-        shooter2.size = shooter.size
-        addChild(shooter2)
+        if appDelegate.mpcManager.session.connectedPeers.count > 0
+        {
+            shooter2 = SKSpriteNode(imageNamed: "player.png")
+            shooter2.name = "playerHit"
+            shooter2.physicsBody = SKPhysicsBody(rectangleOf: shooter2.size)
+            shooter2.physicsBody?.affectedByGravity = false
+            shooter2.physicsBody?.contactTestBitMask = (shooter2.physicsBody?.collisionBitMask)!
+            shooter2.position = shooter.position
+            shooter2.size = shooter.size
+            addChild(shooter2)
+        }
+        else
+        {
+            singlePlayer = true
+        }
+        
         
 
         
@@ -260,9 +273,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         bullet.yScale = 0.4
         bullet.zPosition = 1
         let bulletRotation = shooter.zRotation - CGFloat(M_PI_2)
-        let rotation = SKAction.rotate(toAngle: bulletRotation, duration: 0.00001)
-        bullet.run(rotation)
-        
+        bullet.zRotation = bulletRotation
         let angle = shooter.zRotation
         
         //through testing, cos and sin are reversed in terms of x and y
@@ -270,11 +281,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         let newdx = cos(angle)
         
         
-        bullet.position = CGPoint(x: shooter.position.x + CGFloat(newdx)*40, y: shooter.position.y + CGFloat(newdy)*40)
-        
-        
+        bullet.position = CGPoint(x: shooter.position.x + CGFloat(newdx)*60, y: shooter.position.y + CGFloat(newdy)*60)
         bullet.name = "bullet"
-        bullet.physicsBody? = SKPhysicsBody(rectangleOf: bullet.size)
+        bullet.physicsBody = SKPhysicsBody(rectangleOf: bullet.size)
         bullet.physicsBody?.affectedByGravity = false
         bullet.physicsBody?.contactTestBitMask = (bullet.physicsBody?.contactTestBitMask)!
         let newVector = CGVector(dx: Double(newdx) * 800,dy: Double(newdy) * 800)
@@ -290,13 +299,43 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         addChild(bullet)
     }
     
+    func enemyBulletShot(bulletPosition : CGPoint, vector: CGVector, rotation: CGFloat)
+    {
+        let bullet : SKSpriteNode! = SKSpriteNode(imageNamed: "Bullet.png")
+        bullet.xScale = 0.3
+        bullet.yScale = 0.4
+        bullet.zPosition = 1
+        bullet.zRotation = rotation
+        
+        let angle = rotation
+        
+        //through testing, cos and sin are reversed in terms of x and y
+        let newdy = sin(angle)
+        let newdx = cos(angle)
+        bullet.position = bulletPosition
+        bullet.name = "bullet"
+        bullet.physicsBody = SKPhysicsBody(rectangleOf: bullet.size)
+        bullet.physicsBody?.affectedByGravity = false
+        bullet.physicsBody?.contactTestBitMask = (bullet.physicsBody?.contactTestBitMask)!
+        
+        let shoot = SKAction.move(by: vector, duration: 2)
+        
+        bullet.run(shoot, completion: {
+            bullet.removeFromParent()
+        })
+        addChild(bullet)
+    }
+    
     func didBegin(_ contact: SKPhysicsContact) {
         if (contact.bodyA.node?.name == "bullet")
         {
             contact.bodyA.node?.removeFromParent()
+            
+            print("hit: ", contact.bodyB.node?.name)
         } else if (contact.bodyB.node?.name == "bullet")
         {
             contact.bodyB.node?.removeFromParent()
+            print("hit: ", contact.bodyA.node?.name)
         }
         
         // powerUp Pick Up
@@ -355,37 +394,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         shooter.position.y += CGFloat(newdy) * 7
     }
     
-    func enemyBulletShot(bulletPosition : CGPoint, vector: CGVector, rotation: CGFloat)
-    {
-        let bullet : SKSpriteNode! = SKSpriteNode(imageNamed: "Bullet.png")
-        bullet.xScale = 0.3
-        bullet.yScale = 0.4
-        bullet.zPosition = 1
-        let rotation2 = SKAction.rotate(toAngle: rotation, duration: 0.002)
-        bullet.run(rotation2)
-        
-        let angle = rotation
-        
-        //through testing, cos and sin are reversed in terms of x and y
-        let newdy = sin(angle)
-        let newdx = cos(angle)
-        
-        
-        bullet.position = bulletPosition
-        
-        
-        bullet.name = "bullet"
-        bullet.physicsBody? = SKPhysicsBody(rectangleOf: bullet.size)
-        bullet.physicsBody?.affectedByGravity = false
-        bullet.physicsBody?.contactTestBitMask = (bullet.physicsBody?.contactTestBitMask)!
-        
-        let shoot = SKAction.move(by: vector, duration: 2)
-        
-        bullet.run(shoot, completion: {
-            bullet.removeFromParent()
-        })
-        addChild(bullet)
-    }
+    
     
 
 
@@ -401,16 +410,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
            {
                 outputStream.write(encodedDataArray, maxLength: encodedDataArray.count)
             }
-        }
-        shooter2.position = appDelegate.mpcManager.position
-        shooter2.zRotation = appDelegate.mpcManager.rotation
         
-        if appDelegate.mpcManager.shotBullet
-        {
-            appDelegate.mpcManager.shotBullet = false
+            shooter2.position = appDelegate.mpcManager.position
+            shooter2.zRotation = appDelegate.mpcManager.rotation
             
-            enemyBulletShot(bulletPosition: appDelegate.mpcManager.bulletPosition, vector: appDelegate.mpcManager.vector, rotation: appDelegate.mpcManager.bulletRotation)
+            if appDelegate.mpcManager.shotBullet
+            {
+                appDelegate.mpcManager.shotBullet = false
+                
+                enemyBulletShot(bulletPosition: appDelegate.mpcManager.bulletPosition, vector: appDelegate.mpcManager.vector, rotation: appDelegate.mpcManager.bulletRotation)
+            }
+            
         }
-        
     }
 }

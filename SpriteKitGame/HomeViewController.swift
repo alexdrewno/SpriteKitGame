@@ -1,7 +1,8 @@
 import UIKit
 import MultipeerConnectivity
 
-class HomeViewController: UIViewController,  MPCManagerDelegate, UITableViewDelegate, UITableViewDataSource{
+class HomeViewController: UIViewController,  MPCManagerDelegate, UITableViewDelegate, UITableViewDataSource
+{
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet weak var tableView: UITableView!
@@ -17,12 +18,14 @@ class HomeViewController: UIViewController,  MPCManagerDelegate, UITableViewDele
     func foundPeer()
     {
         print("foundPeer")
-        appDelegate.mpcManager.browser.invitePeer(appDelegate.mpcManager.foundPeers[0], to: appDelegate.mpcManager.session, withContext: nil, timeout: 20)
+        tableView.reloadData()
+        
     }
     
     func lostPeer()
     {
         print("lostPeer")
+        tableView.reloadData()
     }
     
     func invitationWasReceived(fromPeer: String)
@@ -57,15 +60,17 @@ class HomeViewController: UIViewController,  MPCManagerDelegate, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        appDelegate.mpcManager.browser.invitePeer(appDelegate.mpcManager.foundPeers[indexPath.row], to: appDelegate.mpcManager.session, withContext: nil, timeout: 20)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return appDelegate.mpcManager.foundPeers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "peercell")!
+        cell.textLabel!.text! = appDelegate.mpcManager.foundPeers[indexPath.row].displayName
+        return cell
     }
     
     
