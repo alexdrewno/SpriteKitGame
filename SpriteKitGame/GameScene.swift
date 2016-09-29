@@ -9,6 +9,7 @@
 import SpriteKit
 import MultipeerConnectivity
 import GameKit
+import AVFoundation
 
 class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     
@@ -33,6 +34,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     var dead : Bool = false
     var healthLabelNode : SKLabelNode!
     var flashRedNode : SKSpriteNode!
+    var shootSound = AVAudioPlayer()
     
     override func didMove(to view: SKView) {
         
@@ -101,29 +103,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
             singlePlayer = true
         }
         
-        
-
-        
         self.camera = newCam
         
         setupCamera()
         addPlayerConstraints()
-/*
-        addChild(powerUp)
-        addChild(box)
-        addChild(wall4)
-        addChild(wall5)
-        addChild(wallCorner)
-        addChild(wall)
-        addChild(wall1)
-        addChild(wallCorner1)
-        addChild(wallCorner2)
-        addChild(wall2)
-        addChild(wall3)
-        addChild(wallCorner3)
-        addChild(wall6)
-        addChild(wall7)
- */
+        
         addChild(newCam)
         addChild(shooter)
         addChild(background)
@@ -181,6 +165,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
             bullet.removeFromParent()
         })
         addChild(bullet)
+        
+        // assign sound and play it
+        shootSound = self.setupAudioPlayerWithFile("shot", type:"wav")
+        shootSound.play()
     }
     
     func enemyBulletShot(bulletPosition : CGPoint, vector: CGVector, rotation: CGFloat)
@@ -365,5 +353,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
             }
             
         }
+    }
+    
+    // Sound setup
+    func setupAudioPlayerWithFile(_ file:NSString, type:NSString) -> AVAudioPlayer  {
+        //1
+        let path = Bundle.main.path(forResource: file as String, ofType:type as String)
+        let url = URL(fileURLWithPath: path!)
+        
+        //2
+        var audioPlayer:AVAudioPlayer?
+        
+        // 3
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: url)
+        } catch {
+            print("Player not available")
+        }
+        
+        //4
+        return audioPlayer!
     }
 }
