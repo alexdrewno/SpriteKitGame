@@ -2,6 +2,7 @@
 
 import UIKit
 import MultipeerConnectivity
+import GameKit
 
 
 protocol MPCManagerDelegate {
@@ -40,6 +41,8 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     var vector : CGVector! = CGVector(dx:0,dy:0)
     var bulletPosition : CGPoint = CGPoint(x:0,y:0)
     var bulletRotation : CGFloat = 0
+    
+    var dead = false
     
     
     override init() {
@@ -138,6 +141,11 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
                 shotBullet = true
             }
             
+        }
+        else
+        {
+            print("called")
+            dead = true
         }
         
     }

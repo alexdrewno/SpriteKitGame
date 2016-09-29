@@ -8,6 +8,7 @@
 
 import SpriteKit
 import MultipeerConnectivity
+import GameKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     
@@ -40,6 +41,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var outputStream : OutputStream!
     var singlePlayer : Bool = false
+    var health : Int = 100
+    var dead : Bool = false
     
     override func didMove(to view: SKView) {
         
@@ -194,16 +197,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         powerUp.physicsBody?.isDynamic = false
         powerUp.physicsBody?.contactTestBitMask = (powerUp.physicsBody?.collisionBitMask)!
         
-        shooter.name = "playerHit"
-        shooter.physicsBody = SKPhysicsBody(rectangleOf: shooter.size)
+        shooter.name = "playerHit1"
+        shooter.physicsBody = SKPhysicsBody(texture: shooter.texture!, size: shooter.size)
         shooter.physicsBody?.affectedByGravity = false
         shooter.physicsBody?.contactTestBitMask = (shooter.physicsBody?.collisionBitMask)!
         
         if appDelegate.mpcManager.session.connectedPeers.count > 0
         {
             shooter2 = SKSpriteNode(imageNamed: "player.png")
-            shooter2.name = "playerHit"
-            shooter2.physicsBody = SKPhysicsBody(rectangleOf: shooter2.size)
+            shooter2.name = "playerHit2"
+            shooter2.physicsBody = SKPhysicsBody(texture: shooter2.texture!, size: shooter2.size)
             shooter2.physicsBody?.affectedByGravity = false
             shooter2.physicsBody?.contactTestBitMask = (shooter2.physicsBody?.collisionBitMask)!
             shooter2.position = shooter.position
@@ -222,9 +225,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         
         setupCamera()
         addPlayerConstraints()
-        
-        addChild(powerUp)
 /*
+        addChild(powerUp)
         addChild(box)
         addChild(wall4)
         addChild(wall5)
@@ -283,7 +285,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         
         bullet.position = CGPoint(x: shooter.position.x + CGFloat(newdx)*60, y: shooter.position.y + CGFloat(newdy)*60)
         bullet.name = "bullet"
-        bullet.physicsBody = SKPhysicsBody(rectangleOf: bullet.size)
+        bullet.physicsBody = SKPhysicsBody(texture: bullet.texture!, size: bullet.size)
         bullet.physicsBody?.affectedByGravity = false
         bullet.physicsBody?.contactTestBitMask = (bullet.physicsBody?.contactTestBitMask)!
         let newVector = CGVector(dx: Double(newdx) * 800,dy: Double(newdy) * 800)
@@ -314,7 +316,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         let newdx = cos(angle)
         bullet.position = bulletPosition
         bullet.name = "bullet"
-        bullet.physicsBody = SKPhysicsBody(rectangleOf: bullet.size)
+        bullet.physicsBody = SKPhysicsBody(texture: bullet.texture!, size: bullet.size)
         bullet.physicsBody?.affectedByGravity = false
         bullet.physicsBody?.contactTestBitMask = (bullet.physicsBody?.contactTestBitMask)!
         
@@ -329,13 +331,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     func didBegin(_ contact: SKPhysicsContact) {
         if (contact.bodyA.node?.name == "bullet")
         {
+            contact.bodyA.node?.removeAllActions()
             contact.bodyA.node?.removeFromParent()
+            
+            if contact.bodyB.node!.name == "playerHit1"
+            {
+                print(health)
+                health -= 20
+                checkIfDead()
+            }
             
             print("hit: ", contact.bodyB.node?.name)
         } else if (contact.bodyB.node?.name == "bullet")
         {
+            contact.bodyB.node?.removeAllActions()
             contact.bodyB.node?.removeFromParent()
             print("hit: ", contact.bodyA.node?.name)
+            
+            if contact.bodyA.node!.name == "playerHit1"
+            {
+                health -= 20
+                print(health)
+                checkIfDead()
+            }
         }
         
         // powerUp Pick Up
@@ -390,15 +408,38 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         let newdy = cos(angle)
         let newdx = sin(angle)
         
-        shooter.position.x += CGFloat(newdx) * 7
-        shooter.position.y += CGFloat(newdy) * 7
+        if !dead
+        {
+            shooter.position.x += CGFloat(newdx) * 7
+            shooter.position.y += CGFloat(newdy) * 7
+        }
     }
     
+    func checkIfDead()
+    {
+        if health == 0
+        {
+            shooter.removeFromParent()
+            dead = true
+            if appDelegate.mpcManager.session.connectedPeers.count > 0
+            {
+                appDelegate.mpcManager.sendData(dataToSend: "dead")
+                delay(5, closure: { 
+                    self.addChild(self.shooter)
+                    self.health = 100
+                    self.dead = false
+                    self.shooter.position.x = CGFloat(GKRandomDistribution(lowestValue: Int(-self.background.frame.width/2 + 50), highestValue: 0).nextInt())
+                    self.shooter.position.y = CGFloat(GKRandomDistribution(lowestValue: Int(-self.background.frame.height/2 + 50), highestValue: Int(self.background.frame.height/2)).nextInt())
+                })
+            }
+        }
+    }
     
-    
+    func delay(_ delay:Double, closure:@escaping ()->()) {
+    let when = DispatchTime.now() + delay
+    DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
+    }
 
-
-   
     override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
         if appDelegate.mpcManager.session.connectedPeers.count > 0
@@ -419,6 +460,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
                 appDelegate.mpcManager.shotBullet = false
                 
                 enemyBulletShot(bulletPosition: appDelegate.mpcManager.bulletPosition, vector: appDelegate.mpcManager.vector, rotation: appDelegate.mpcManager.bulletRotation)
+            }
+            
+            if appDelegate.mpcManager.dead
+            {
+                print("called2")
+                appDelegate.mpcManager.dead = !appDelegate.mpcManager.dead
+                shooter2.removeFromParent()
+                shooter2.position = CGPoint(x: -10000, y: -10000)
+                delay(5, closure: {
+                    self.addChild(self.shooter2)
+                })
+            
+                
             }
             
         }
