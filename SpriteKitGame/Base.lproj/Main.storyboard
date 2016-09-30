@@ -59,8 +59,21 @@
                                         <frame key="frameInset" minX="70.25%" minY="41.24%" width="3.17%" height="5.47%"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sl-eE-A0H">
+                                        <frame key="frameInset" minX="36.08%" minY="72.26%" width="27.85%" height="10.95%"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="Play solo"/>
+                                        <connections>
+                                            <segue destination="BV1-FR-VrT" kind="show" identifier="gameSegue" id="DKm-HJ-dsS"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bullet.png" translatesAutoresizingMaskIntoConstraints="NO" id="vFq-FT-D8S">
+                                        <frame key="frameInset" minX="58.23%" minY="44.89%" width="3.17%" height="5.47%"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMy-5l-NGK">
-                                        <frame key="frameInset" minX="29.75%" minY="2.92%" width="43.67%" height="10.95%"/>
+                                        <frame key="frameInset" minX="28.17%" minY="2.92%" width="43.67%" height="10.95%"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Singleplayer">
@@ -77,19 +90,6 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sl-eE-A0H">
-                                        <frame key="frameInset" minX="36.08%" minY="72.26%" width="27.85%" height="10.95%"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
-                                        <state key="normal" title="Play solo"/>
-                                        <connections>
-                                            <segue destination="BV1-FR-VrT" kind="show" identifier="gameSegue" id="DKm-HJ-dsS"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bullet.png" translatesAutoresizingMaskIntoConstraints="NO" id="vFq-FT-D8S">
-                                        <frame key="frameInset" minX="58.23%" minY="44.89%" width="3.17%" height="5.47%"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
