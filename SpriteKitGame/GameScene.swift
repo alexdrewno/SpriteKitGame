@@ -25,7 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     var shootingdy : CGFloat = 0.0
     var angle : CGFloat = 0.0
     var background = SKSpriteNode(imageNamed: "TDS:Ground.png")
-    var box = SKSpriteNode(imageNamed: "WoodenBox2.png")
+    //var box = SKSpriteNode(imageNamed: "WoodenBox2.png")
     var building = SKSpriteNode(imageNamed: "TDS:Building.png")
     var powerUp = SKSpriteNode(color: UIColor.red, size: CGSize(width: 2, height: 2))
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
