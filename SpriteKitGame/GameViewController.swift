@@ -65,6 +65,21 @@ class GameViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        
+        if scene.singlePlayer
+        {
+            let alert = UIAlertController(title: "Sorry", message: "This mode is unavailable but you are allowed to run around and discover the map", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+            present(alert, animated: false, completion: nil)
+
+        }
+        
+        
+        
+    }
+    
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

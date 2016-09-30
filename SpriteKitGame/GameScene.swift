@@ -26,7 +26,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     var angle : CGFloat = 0.0
     var background = SKSpriteNode(imageNamed: "TDS:Ground.png")
     //var box = SKSpriteNode(imageNamed: "WoodenBox2.png")
-    var building = SKSpriteNode(imageNamed: "TDS:Building.png")
+    //var building = SKSpriteNode(imageNamed: "TDS:Building.png")
     var powerUp = SKSpriteNode(color: UIColor.red, size: CGSize(width: 2, height: 2))
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var outputStream : OutputStream!
@@ -37,12 +37,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     var flashRedNode : SKSpriteNode!
     var shootSound = AVAudioPlayer()
     
+    
     override func didMove(to view: SKView) {
         
         physicsWorld.contactDelegate = self
         self.view?.showsPhysics = true
         physicsWorld.gravity = CGVector(dx: 0,dy: 0)
-        
+
         flashRedNode = SKSpriteNode(color: UIColor.red, size: CGSize(width: 10000, height: 10000))
         flashRedNode.alpha = 0.1
         
@@ -65,6 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         shooter.size = CGSize(width: 60, height: 60)
         shooter.zPosition = 2
         
+        /*
         building.position = CGPoint(x: 0, y: 0)
         building.xScale = 8
         building.yScale = 8
@@ -72,6 +74,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         building.physicsBody!.affectedByGravity = false
         building.physicsBody!.isDynamic = false
         building.physicsBody!.contactTestBitMask = building.physicsBody!.collisionBitMask
+ */
         
         /*
         box.position = CGPoint(x: 10,y: 90)
@@ -118,7 +121,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         setupCamera()
         addPlayerConstraints()
         
-        addChild(building)
+        //addChild(building)
         addChild(newCam)
         addChild(shooter)
         addChild(background)
@@ -139,10 +142,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
             }
             
         }
+        else
+        {
+            singlePlayer = true
+        }
 
     }
-    
-    
+
     
     func spawnBullet()
     {
