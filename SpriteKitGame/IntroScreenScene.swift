@@ -11,6 +11,7 @@ class IntroScreenScene: SKScene {
     var tdsNode : SKLabelNode!
     var startNode : SKLabelNode!
     var iDelegate : introDelegate?
+    var backgroundNode : SKSpriteNode!
     
     override func didMove(to view: SKView) {
         backgroundColor = UIColor.black
@@ -27,10 +28,14 @@ class IntroScreenScene: SKScene {
         startNode.color = UIColor.white
         startNode.fontSize = 30
         
+        backgroundNode = SKSpriteNode(imageNamed: "TDS-MenuBackground")
+        backgroundNode.position = CGPoint(x: startNode.position.x, y: startNode.position.y)
+        backgroundNode.size = CGSize(width: frame.width, height: frame.height)
+        backgroundNode.zPosition = -1
         
         addChild(tdsNode)
         addChild(startNode)
-        
+        addChild(backgroundNode)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
