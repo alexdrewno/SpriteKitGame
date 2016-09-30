@@ -6,6 +6,10 @@ class HomeViewController: UIViewController,  MPCManagerDelegate, UITableViewDele
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var bullets: [UIImageView]!
+    @IBOutlet weak var player: UIImageView!
+    @IBOutlet weak var multiplayerView: UIView!
+    @IBOutlet weak var singleplayerView: UIView!
     
     override func viewDidLoad() {
         appDelegate.mpcManager.delegate = self
@@ -13,6 +17,18 @@ class HomeViewController: UIViewController,  MPCManagerDelegate, UITableViewDele
         appDelegate.mpcManager.advertiser.startAdvertisingPeer()
         tableView.delegate = self
         tableView.dataSource = self
+        for bullet in bullets
+        {
+            bullet.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
+        }
+        
+        player.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
+        
+        multiplayerView.layer.borderWidth = 5
+        singleplayerView.layer.borderWidth = 5
+        multiplayerView.layer.borderColor = UIColor.darkGray.cgColor
+        singleplayerView.layer.borderColor = UIColor.darkGray.cgColor
+        
     }
     
     func foundPeer()

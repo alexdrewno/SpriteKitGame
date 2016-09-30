@@ -15,6 +15,9 @@
 		3F8397AF1D8C3925003F68E4 /* PurplePlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8397AE1D8C3925003F68E4 /* PurplePlayer.png */; };
 		3F8397B11D8C3935003F68E4 /* YellowPlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8397B01D8C3935003F68E4 /* YellowPlayer.png */; };
 		3F8397B31D8C393D003F68E4 /* TDS:Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8397B21D8C393D003F68E4 /* TDS:Ground.png */; };
+		3F9FA4471D9D778E007E046E /* IntroScreenScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F9FA4461D9D778E007E046E /* IntroScreenScene.sks */; };
+		3F9FA4491D9D77AB007E046E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FA4481D9D77AB007E046E /* IntroViewController.swift */; };
+		3F9FA44B1D9D7B6C007E046E /* IntroScreenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FA44A1D9D7B6C007E046E /* IntroScreenScene.swift */; };
 		3FBD9C5D1D9C916E00F355B2 /* TDSIconFinal in Resources */ = {isa = PBXBuildFile; fileRef = 3FBD9C5C1D9C916E00F355B2 /* TDSIconFinal */; };
 		3FBD9C5F1D9C91DA00F355B2 /* TDS:Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBD9C5E1D9C91DA00F355B2 /* TDS:Player.png */; };
 		3FBE3B421D92B999005C15E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE3B411D92B999005C15E1 /* HomeViewController.swift */; };
@@ -56,6 +59,9 @@
 		3F8397AE1D8C3925003F68E4 /* PurplePlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PurplePlayer.png; sourceTree = "<group>"; };
 		3F8397B01D8C3935003F68E4 /* YellowPlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowPlayer.png; sourceTree = "<group>"; };
 		3F8397B21D8C393D003F68E4 /* TDS:Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TDS:Ground.png"; sourceTree = "<group>"; };
+		3F9FA4461D9D778E007E046E /* IntroScreenScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = IntroScreenScene.sks; sourceTree = "<group>"; };
+		3F9FA4481D9D77AB007E046E /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		3F9FA44A1D9D7B6C007E046E /* IntroScreenScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScreenScene.swift; sourceTree = "<group>"; };
 		3FBD9C5C1D9C916E00F355B2 /* TDSIconFinal */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TDSIconFinal; sourceTree = "<group>"; };
 		3FBD9C5E1D9C91DA00F355B2 /* TDS:Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TDS:Player.png"; sourceTree = "<group>"; };
 		3FBE3B411D92B999005C15E1 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +150,9 @@
 			children = (
 				958C0C951D8A086D000FFB6B /* AppDelegate.swift */,
 				3FF435331D941F610035C33A /* MPCManager.swift */,
+				3F9FA4481D9D77AB007E046E /* IntroViewController.swift */,
+				3F9FA44A1D9D7B6C007E046E /* IntroScreenScene.swift */,
+				3F9FA4461D9D778E007E046E /* IntroScreenScene.sks */,
 				3FBE3B411D92B999005C15E1 /* HomeViewController.swift */,
 				958C0C9B1D8A086D000FFB6B /* GameViewController.swift */,
 				958C0C991D8A086D000FFB6B /* GameScene.swift */,
@@ -293,6 +302,7 @@
 				3F8397AF1D8C3925003F68E4 /* PurplePlayer.png in Resources */,
 				958C0CA11D8A086D000FFB6B /* Assets.xcassets in Resources */,
 				3F8397B31D8C393D003F68E4 /* TDS:Ground.png in Resources */,
+				3F9FA4471D9D778E007E046E /* IntroScreenScene.sks in Resources */,
 				1057542C1D9D61D1003F9F5A /* TDS:Building.png in Resources */,
 				3FBD9C5D1D9C916E00F355B2 /* TDSIconFinal in Resources */,
 				1057542E1D9D6C3D003F9F5A /* shot.wav in Resources */,
@@ -323,7 +333,9 @@
 			files = (
 				958C0C9A1D8A086D000FFB6B /* GameScene.swift in Sources */,
 				958C0C9C1D8A086D000FFB6B /* GameViewController.swift in Sources */,
+				3F9FA44B1D9D7B6C007E046E /* IntroScreenScene.swift in Sources */,
 				3FF435341D941F610035C33A /* MPCManager.swift in Sources */,
+				3F9FA4491D9D77AB007E046E /* IntroViewController.swift in Sources */,
 				958C0C961D8A086D000FFB6B /* AppDelegate.swift in Sources */,
 				3FBE3B421D92B999005C15E1 /* HomeViewController.swift in Sources */,
 			);
