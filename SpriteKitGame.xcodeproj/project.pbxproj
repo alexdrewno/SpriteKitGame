@@ -10,6 +10,7 @@
 		1057542A1D9D615A003F9F5A /* TDS:Wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 105754291D9D615A003F9F5A /* TDS:Wall.png */; };
 		1057542C1D9D61D1003F9F5A /* TDS:Building.png in Resources */ = {isa = PBXBuildFile; fileRef = 1057542B1D9D61D1003F9F5A /* TDS:Building.png */; };
 		1057542E1D9D6C3D003F9F5A /* shot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1057542D1D9D6C3D003F9F5A /* shot.wav */; };
+		105754301D9EA858003F9F5A /* TDS-MenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1057542F1D9EA858003F9F5A /* TDS-MenuBackground.png */; };
 		3F34BCBD1D8AE929009C2B38 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F34BCBC1D8AE929009C2B38 /* player.png */; };
 		3F34BCBF1D8AEDB6009C2B38 /* Bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F34BCBE1D8AEDB6009C2B38 /* Bullet.png */; };
 		3F8397AF1D8C3925003F68E4 /* PurplePlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8397AE1D8C3925003F68E4 /* PurplePlayer.png */; };
@@ -54,6 +55,7 @@
 		105754291D9D615A003F9F5A /* TDS:Wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TDS:Wall.png"; sourceTree = "<group>"; };
 		1057542B1D9D61D1003F9F5A /* TDS:Building.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TDS:Building.png"; sourceTree = "<group>"; };
 		1057542D1D9D6C3D003F9F5A /* shot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shot.wav; sourceTree = "<group>"; };
+		1057542F1D9EA858003F9F5A /* TDS-MenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TDS-MenuBackground.png"; sourceTree = "<group>"; };
 		3F34BCBC1D8AE929009C2B38 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		3F34BCBE1D8AEDB6009C2B38 /* Bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bullet.png; sourceTree = "<group>"; };
 		3F8397AE1D8C3925003F68E4 /* PurplePlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PurplePlayer.png; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		3F34BCBB1D8AE901009C2B38 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1057542F1D9EA858003F9F5A /* TDS-MenuBackground.png */,
 				1057542D1D9D6C3D003F9F5A /* shot.wav */,
 				3FBD9C5C1D9C916E00F355B2 /* TDSIconFinal */,
 				3F8397AE1D8C3925003F68E4 /* PurplePlayer.png */,
@@ -252,7 +255,7 @@
 				TargetAttributes = {
 					958C0C911D8A086D000FFB6B = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 5Q75DE3GYF;
+						DevelopmentTeam = SS74D43GDA;
 						LastSwiftMigration = 0800;
 					};
 					958C0CA91D8A086D000FFB6B = {
@@ -298,6 +301,7 @@
 				958C0C981D8A086D000FFB6B /* GameScene.sks in Resources */,
 				1057542A1D9D615A003F9F5A /* TDS:Wall.png in Resources */,
 				958C0CA41D8A086D000FFB6B /* LaunchScreen.storyboard in Resources */,
+				105754301D9EA858003F9F5A /* TDS-MenuBackground.png in Resources */,
 				3F8397B11D8C3935003F68E4 /* YellowPlayer.png in Resources */,
 				3F8397AF1D8C3925003F68E4 /* PurplePlayer.png in Resources */,
 				958C0CA11D8A086D000FFB6B /* Assets.xcassets in Resources */,
@@ -482,6 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = SS74D43GDA;
 				INFOPLIST_FILE = SpriteKitGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.SpriteKitGame;
@@ -495,6 +500,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = SS74D43GDA;
 				INFOPLIST_FILE = SpriteKitGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.SpriteKitGame;
