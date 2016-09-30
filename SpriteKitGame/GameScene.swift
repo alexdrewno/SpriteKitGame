@@ -178,8 +178,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         bullet.yScale = 0.4
         bullet.zPosition = 1
         bullet.zRotation = rotation
-        
-        let angle = rotation
         bullet.position = bulletPosition
         bullet.name = "bullet"
         bullet.physicsBody = SKPhysicsBody(texture: bullet.texture!, size: bullet.size)
