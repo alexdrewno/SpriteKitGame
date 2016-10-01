@@ -11,6 +11,8 @@
 		1057542C1D9D61D1003F9F5A /* TDS:Building.png in Resources */ = {isa = PBXBuildFile; fileRef = 1057542B1D9D61D1003F9F5A /* TDS:Building.png */; };
 		1057542E1D9D6C3D003F9F5A /* shot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1057542D1D9D6C3D003F9F5A /* shot.wav */; };
 		105754301D9EA858003F9F5A /* TDS-MenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1057542F1D9EA858003F9F5A /* TDS-MenuBackground.png */; };
+		105754321D9F6734003F9F5A /* WoodenBox2.png in Resources */ = {isa = PBXBuildFile; fileRef = 105754311D9F6734003F9F5A /* WoodenBox2.png */; };
+		105754341D9F6D3C003F9F5A /* DCArmementsLOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 105754331D9F6D3C003F9F5A /* DCArmementsLOGO.png */; };
 		3F34BCBD1D8AE929009C2B38 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F34BCBC1D8AE929009C2B38 /* player.png */; };
 		3F34BCBF1D8AEDB6009C2B38 /* Bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F34BCBE1D8AEDB6009C2B38 /* Bullet.png */; };
 		3F8397AF1D8C3925003F68E4 /* PurplePlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8397AE1D8C3925003F68E4 /* PurplePlayer.png */; };
@@ -56,6 +58,8 @@
 		1057542B1D9D61D1003F9F5A /* TDS:Building.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TDS:Building.png"; sourceTree = "<group>"; };
 		1057542D1D9D6C3D003F9F5A /* shot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shot.wav; sourceTree = "<group>"; };
 		1057542F1D9EA858003F9F5A /* TDS-MenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TDS-MenuBackground.png"; sourceTree = "<group>"; };
+		105754311D9F6734003F9F5A /* WoodenBox2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WoodenBox2.png; sourceTree = "<group>"; };
+		105754331D9F6D3C003F9F5A /* DCArmementsLOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DCArmementsLOGO.png; sourceTree = "<group>"; };
 		3F34BCBC1D8AE929009C2B38 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		3F34BCBE1D8AEDB6009C2B38 /* Bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bullet.png; sourceTree = "<group>"; };
 		3F8397AE1D8C3925003F68E4 /* PurplePlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PurplePlayer.png; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 		3F34BCBB1D8AE901009C2B38 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				105754331D9F6D3C003F9F5A /* DCArmementsLOGO.png */,
+				105754311D9F6734003F9F5A /* WoodenBox2.png */,
 				1057542F1D9EA858003F9F5A /* TDS-MenuBackground.png */,
 				1057542D1D9D6C3D003F9F5A /* shot.wav */,
 				3FBD9C5C1D9C916E00F355B2 /* TDSIconFinal */,
@@ -307,10 +313,12 @@
 				958C0CA11D8A086D000FFB6B /* Assets.xcassets in Resources */,
 				3F8397B31D8C393D003F68E4 /* TDS:Ground.png in Resources */,
 				3F9FA4471D9D778E007E046E /* IntroScreenScene.sks in Resources */,
+				105754341D9F6D3C003F9F5A /* DCArmementsLOGO.png in Resources */,
 				1057542C1D9D61D1003F9F5A /* TDS:Building.png in Resources */,
 				3FBD9C5D1D9C916E00F355B2 /* TDSIconFinal in Resources */,
 				1057542E1D9D6C3D003F9F5A /* shot.wav in Resources */,
 				958C0C9F1D8A086D000FFB6B /* Main.storyboard in Resources */,
+				105754321D9F6734003F9F5A /* WoodenBox2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

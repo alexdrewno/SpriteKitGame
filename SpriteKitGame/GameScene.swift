@@ -25,7 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     var shootingdy : CGFloat = 0.0
     var angle : CGFloat = 0.0
     var background = SKSpriteNode(imageNamed: "TDS:Ground.png")
-    //var box = SKSpriteNode(imageNamed: "WoodenBox2.png")
+    var box = SKSpriteNode(imageNamed: "WoodenBox2.png")
     //var building = SKSpriteNode(imageNamed: "TDS:Building.png")
     var powerUp = SKSpriteNode(color: UIColor.red, size: CGSize(width: 2, height: 2))
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -74,20 +74,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         building.physicsBody!.affectedByGravity = false
         building.physicsBody!.isDynamic = false
         building.physicsBody!.contactTestBitMask = building.physicsBody!.collisionBitMask
- */
+         */
         
-        /*
+        
         box.position = CGPoint(x: 10,y: 90)
         box.zPosition = 1
         box.yScale = 2
         box.xScale = 2
         
-             box.name = "moveableBoxHit"
+        box.name = "moveableBoxHit"
         box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
         box.physicsBody?.affectedByGravity = false
         box.physicsBody?.isDynamic = true
         box.physicsBody?.contactTestBitMask = (box.physicsBody?.collisionBitMask)!
-        */
         
         powerUp.name = "powerUpHit"
         powerUp.physicsBody = SKPhysicsBody(rectangleOf: powerUp.size)
@@ -121,6 +120,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         setupCamera()
         addPlayerConstraints()
         
+        addChild(box)
         //addChild(building)
         addChild(newCam)
         addChild(shooter)
