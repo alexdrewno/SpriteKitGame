@@ -13,6 +13,7 @@
 		105754301D9EA858003F9F5A /* TDS-MenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1057542F1D9EA858003F9F5A /* TDS-MenuBackground.png */; };
 		105754321D9F6734003F9F5A /* WoodenBox2.png in Resources */ = {isa = PBXBuildFile; fileRef = 105754311D9F6734003F9F5A /* WoodenBox2.png */; };
 		105754341D9F6D3C003F9F5A /* DCArmementsLOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 105754331D9F6D3C003F9F5A /* DCArmementsLOGO.png */; };
+		105754361DA0CC97003F9F5A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105754351DA0CC97003F9F5A /* StatsViewController.swift */; };
 		3F34BCBD1D8AE929009C2B38 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F34BCBC1D8AE929009C2B38 /* player.png */; };
 		3F34BCBF1D8AEDB6009C2B38 /* Bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F34BCBE1D8AEDB6009C2B38 /* Bullet.png */; };
 		3F8397AF1D8C3925003F68E4 /* PurplePlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8397AE1D8C3925003F68E4 /* PurplePlayer.png */; };
@@ -60,6 +61,7 @@
 		1057542F1D9EA858003F9F5A /* TDS-MenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TDS-MenuBackground.png"; sourceTree = "<group>"; };
 		105754311D9F6734003F9F5A /* WoodenBox2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WoodenBox2.png; sourceTree = "<group>"; };
 		105754331D9F6D3C003F9F5A /* DCArmementsLOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DCArmementsLOGO.png; sourceTree = "<group>"; };
+		105754351DA0CC97003F9F5A /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		3F34BCBC1D8AE929009C2B38 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		3F34BCBE1D8AEDB6009C2B38 /* Bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bullet.png; sourceTree = "<group>"; };
 		3F8397AE1D8C3925003F68E4 /* PurplePlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PurplePlayer.png; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				958C0CA21D8A086D000FFB6B /* LaunchScreen.storyboard */,
 				958C0CA51D8A086D000FFB6B /* Info.plist */,
 				3F34BCBB1D8AE901009C2B38 /* Supporting Files */,
+				105754351DA0CC97003F9F5A /* StatsViewController.swift */,
 			);
 			path = SpriteKitGame;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 			files = (
 				958C0C9A1D8A086D000FFB6B /* GameScene.swift in Sources */,
 				958C0C9C1D8A086D000FFB6B /* GameViewController.swift in Sources */,
+				105754361DA0CC97003F9F5A /* StatsViewController.swift in Sources */,
 				3F9FA44B1D9D7B6C007E046E /* IntroScreenScene.swift in Sources */,
 				3FF435341D941F610035C33A /* MPCManager.swift in Sources */,
 				3F9FA4491D9D77AB007E046E /* IntroViewController.swift in Sources */,

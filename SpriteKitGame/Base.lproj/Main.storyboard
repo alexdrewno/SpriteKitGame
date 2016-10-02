@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="-1887" y="35"/>
         </scene>
-        <!--View Controller-->
+        <!--Stats View Controller-->
         <scene sceneID="8KY-ih-wtZ">
             <objects>
-                <viewController id="rQ5-C2-ITQ" sceneMemberID="viewController">
+                <viewController id="rQ5-C2-ITQ" customClass="StatsViewController" customModule="SpriteKitGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u8K-Po-B7S"/>
                         <viewControllerLayoutGuide type="bottom" id="Uqi-CF-DDU"/>
@@ -110,7 +110,7 @@
                                         <frame key="frameInset" minX="8" minY="8" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PRIME DIRECTIVE: TYAL3XTHX4-DOWNLOADING..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrP-fg-KKa">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PRIME DIRECTIVE: TY&amp;AL3XTHX4-DOWNLOADING..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrP-fg-KKa">
                                         <frame key="frameInset" minX="76" minY="8" width="94" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -138,6 +138,18 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="667" height="335"/>
+                    <connections>
+                        <outlet property="KD" destination="XRe-HO-4SR" id="poI-OX-hL4"/>
+                        <outlet property="KDLabel" destination="XRe-HO-4SR" id="Egr-9f-x2l"/>
+                        <outlet property="gamesLost" destination="94v-mi-dGf" id="YaE-sl-rf1"/>
+                        <outlet property="gamesLostLabel" destination="94v-mi-dGf" id="6eZ-qS-cEZ"/>
+                        <outlet property="gamesWon" destination="tEe-f9-mDx" id="F5F-y2-AvG"/>
+                        <outlet property="gamesWonLabel" destination="tEe-f9-mDx" id="MbV-sB-Nat"/>
+                        <outlet property="totalDeaths" destination="QDJ-0c-EEB" id="c90-Go-HAT"/>
+                        <outlet property="totalDeathsLabel" destination="QDJ-0c-EEB" id="fGL-hn-ElJ"/>
+                        <outlet property="totalKills" destination="wgq-a3-FJ1" id="Naf-q0-jRb"/>
+                        <outlet property="totalKillsLabel" destination="wgq-a3-FJ1" id="Rf7-X3-N4Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iyh-9n-MJz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
