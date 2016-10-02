@@ -23,7 +23,15 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        KDLabel.text = "K/D: \(totalKills/totalDeaths)"
+        if (totalKills == 0 && totalDeaths == 0) {
+            kd = 0
+        } else if (totalDeaths == 0){
+            kd = Double(totalKills)
+        }
+        else {
+            kd = Double(totalKills / totalDeaths)
+        }
+        KDLabel.text = "K/D: \(kd)"
         totalKillsLabel.text = "Total Kills: \(totalKills)"
         totalDeathsLabel.text = "Total Deaths: \(totalDeaths)"
         gamesWonLabel.text = "Games Won: \(gamesWon)"

@@ -139,15 +139,10 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="667" height="335"/>
                     <connections>
-                        <outlet property="KD" destination="XRe-HO-4SR" id="poI-OX-hL4"/>
                         <outlet property="KDLabel" destination="XRe-HO-4SR" id="Egr-9f-x2l"/>
-                        <outlet property="gamesLost" destination="94v-mi-dGf" id="YaE-sl-rf1"/>
                         <outlet property="gamesLostLabel" destination="94v-mi-dGf" id="6eZ-qS-cEZ"/>
-                        <outlet property="gamesWon" destination="tEe-f9-mDx" id="F5F-y2-AvG"/>
                         <outlet property="gamesWonLabel" destination="tEe-f9-mDx" id="MbV-sB-Nat"/>
-                        <outlet property="totalDeaths" destination="QDJ-0c-EEB" id="c90-Go-HAT"/>
                         <outlet property="totalDeathsLabel" destination="QDJ-0c-EEB" id="fGL-hn-ElJ"/>
-                        <outlet property="totalKills" destination="wgq-a3-FJ1" id="Naf-q0-jRb"/>
                         <outlet property="totalKillsLabel" destination="wgq-a3-FJ1" id="Rf7-X3-N4Y"/>
                     </connections>
                 </viewController>
