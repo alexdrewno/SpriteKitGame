@@ -25,6 +25,7 @@
 		3FBD9C5D1D9C916E00F355B2 /* TDSIconFinal in Resources */ = {isa = PBXBuildFile; fileRef = 3FBD9C5C1D9C916E00F355B2 /* TDSIconFinal */; };
 		3FBD9C5F1D9C91DA00F355B2 /* TDS:Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FBD9C5E1D9C91DA00F355B2 /* TDS:Player.png */; };
 		3FBE3B421D92B999005C15E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE3B411D92B999005C15E1 /* HomeViewController.swift */; };
+		3FC6E0D41D9EA8D500F453D6 /* building.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC6E0D31D9EA8D500F453D6 /* building.png */; };
 		3FF435341D941F610035C33A /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF435331D941F610035C33A /* MPCManager.swift */; };
 		958C0C961D8A086D000FFB6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C0C951D8A086D000FFB6B /* AppDelegate.swift */; };
 		958C0C981D8A086D000FFB6B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 958C0C971D8A086D000FFB6B /* GameScene.sks */; };
@@ -73,6 +74,7 @@
 		3FBD9C5C1D9C916E00F355B2 /* TDSIconFinal */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TDSIconFinal; sourceTree = "<group>"; };
 		3FBD9C5E1D9C91DA00F355B2 /* TDS:Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TDS:Player.png"; sourceTree = "<group>"; };
 		3FBE3B411D92B999005C15E1 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3FC6E0D31D9EA8D500F453D6 /* building.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = building.png; sourceTree = "<group>"; };
 		3FF435331D941F610035C33A /* MPCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
 		958C0C921D8A086D000FFB6B /* SpriteKitGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteKitGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		958C0C951D8A086D000FFB6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				3F8397B21D8C393D003F68E4 /* TDS:Ground.png */,
 				105754291D9D615A003F9F5A /* TDS:Wall.png */,
 				1057542B1D9D61D1003F9F5A /* TDS:Building.png */,
+				3FC6E0D31D9EA8D500F453D6 /* building.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				105754341D9F6D3C003F9F5A /* DCArmementsLOGO.png in Resources */,
 				1057542C1D9D61D1003F9F5A /* TDS:Building.png in Resources */,
 				3FBD9C5D1D9C916E00F355B2 /* TDSIconFinal in Resources */,
+				3FC6E0D41D9EA8D500F453D6 /* building.png in Resources */,
 				1057542E1D9D6C3D003F9F5A /* shot.wav in Resources */,
 				958C0C9F1D8A086D000FFB6B /* Main.storyboard in Resources */,
 				105754321D9F6734003F9F5A /* WoodenBox2.png in Resources */,

@@ -25,8 +25,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     var shootingdy : CGFloat = 0.0
     var angle : CGFloat = 0.0
     var background = SKSpriteNode(imageNamed: "TDS:Ground.png")
+<<<<<<< Updated upstream
     var box = SKSpriteNode(imageNamed: "WoodenBox2.png")
     //var building = SKSpriteNode(imageNamed: "TDS:Building.png")
+=======
+    //var box = SKSpriteNode(imageNamed: "WoodenBox2.png")
+    var building = SKSpriteNode(imageNamed: "building.png")
+    var building2 = SKSpriteNode(imageNamed: "building.png")
+>>>>>>> Stashed changes
     var powerUp = SKSpriteNode(color: UIColor.red, size: CGSize(width: 2, height: 2))
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var outputStream : OutputStream!
@@ -41,7 +47,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     override func didMove(to view: SKView) {
         
         physicsWorld.contactDelegate = self
-        self.view?.showsPhysics = true
         physicsWorld.gravity = CGVector(dx: 0,dy: 0)
 
         flashRedNode = SKSpriteNode(color: UIColor.red, size: CGSize(width: 10000, height: 10000))
@@ -66,16 +71,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         shooter.size = CGSize(width: 60, height: 60)
         shooter.zPosition = 2
         
-        /*
-        building.position = CGPoint(x: 0, y: 0)
-        building.xScale = 8
-        building.yScale = 8
+        
+        building.xScale = 1.1
+        building.yScale = 1.1
+        building.position = CGPoint(x:  CGFloat(-self.scene!.frame.width/2) - building.frame.width/4 , y: CGFloat(-self.scene!.frame.height/2) - building.frame.height/4)
+        building.zRotation = CGFloat(-M_PI_2)
         building.physicsBody = SKPhysicsBody(bodies: [SKPhysicsBody(texture: building.texture!, size: building.size)])
         building.physicsBody!.affectedByGravity = false
         building.physicsBody!.isDynamic = false
         building.physicsBody!.contactTestBitMask = building.physicsBody!.collisionBitMask
+<<<<<<< Updated upstream
          */
         
+=======
+ 
+        
+        building2.xScale = 1.1
+        building2.yScale = 1.1
+        building2.position = CGPoint(x:  CGFloat(self.scene!.frame.width/2) + building2.frame.width/4, y: CGFloat(self.scene!.frame.height/2) + building2.frame.height/4)
+        building2.zRotation = CGFloat(M_PI_2)
+        building2.physicsBody = SKPhysicsBody(bodies: [SKPhysicsBody(texture: building.texture!, size: building.size)])
+        building2.physicsBody!.affectedByGravity = false
+        building2.physicsBody!.isDynamic = false
+        building2.physicsBody!.contactTestBitMask = building.physicsBody!.collisionBitMask
+>>>>>>> Stashed changes
         
         box.position = CGPoint(x: 10,y: 90)
         box.zPosition = 1
@@ -106,7 +125,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
             shooter2.physicsBody = SKPhysicsBody(texture: shooter2.texture!, size: shooter2.size)
             shooter2.physicsBody?.affectedByGravity = false
             shooter2.physicsBody?.contactTestBitMask = (shooter2.physicsBody?.collisionBitMask)!
-            shooter2.position = shooter.position
+            //shooter2.position = shooter.position
             shooter2.size = shooter.size
             addChild(shooter2)
         }
@@ -120,8 +139,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         setupCamera()
         addPlayerConstraints()
         
+<<<<<<< Updated upstream
         addChild(box)
         //addChild(building)
+=======
+        addChild(building2)
+        addChild(building)
+>>>>>>> Stashed changes
         addChild(newCam)
         addChild(shooter)
         addChild(background)
@@ -309,8 +333,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
                     self.addChild(self.shooter)
                     self.health = 100
                     self.dead = false
-                    self.shooter.position.x = CGFloat(GKRandomDistribution(lowestValue: Int(-self.background.frame.width/2 + 50), highestValue: 0).nextInt())
-                    self.shooter.position.y = CGFloat(GKRandomDistribution(lowestValue: Int(-self.background.frame.height/2 + 50), highestValue: Int(self.background.frame.height/2)).nextInt())
+                    if self.appDelegate.mpcManager.position.x > 0
+                    {
+                        self.shooter.position = self.building.position
+                    }
+                    else
+                    {
+                        self.shooter.position = self.building2.position
+                    }
                 })
             }
         }
