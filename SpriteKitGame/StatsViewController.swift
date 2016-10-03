@@ -3,7 +3,7 @@
 //  SpriteKitGame
 //
 //  Created by Ty Victorson on 10/2/16.
-//  Copyright © 2016 Alex Drewno. All rights reserved.
+//  Copyright © 2016 Alex Drewno, Ty Victorson. All rights reserved.
 //
 
 import UIKit

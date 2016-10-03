@@ -3,7 +3,7 @@
 //  SpriteKitGame
 //
 //  Created by Alex Drewno on 9/14/16.
-//  Copyright (c) 2016 Alex Drewno. All rights reserved.
+//  Copyright (c) 2016 Alex Drewno, Ty Victorson. All rights reserved.
 //
 
 import SpriteKit
@@ -146,7 +146,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         setupCamera()
         addPlayerConstraints()
         
+<<<<<<< Updated upstream
         //addChild(box)
+=======
+        addChild(box)
+        //addChild(building)
+>>>>>>> Stashed changes
         addChild(building2)
         addChild(building)
         addChild(newCam)
