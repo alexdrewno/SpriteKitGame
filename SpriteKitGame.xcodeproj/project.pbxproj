@@ -168,6 +168,7 @@
 				3F9FA44A1D9D7B6C007E046E /* IntroScreenScene.swift */,
 				3F9FA4461D9D778E007E046E /* IntroScreenScene.sks */,
 				3FBE3B411D92B999005C15E1 /* HomeViewController.swift */,
+				105754351DA0CC97003F9F5A /* StatsViewController.swift */,
 				958C0C9B1D8A086D000FFB6B /* GameViewController.swift */,
 				958C0C991D8A086D000FFB6B /* GameScene.swift */,
 				958C0C971D8A086D000FFB6B /* GameScene.sks */,
@@ -176,7 +177,6 @@
 				958C0CA21D8A086D000FFB6B /* LaunchScreen.storyboard */,
 				958C0CA51D8A086D000FFB6B /* Info.plist */,
 				3F34BCBB1D8AE901009C2B38 /* Supporting Files */,
-				105754351DA0CC97003F9F5A /* StatsViewController.swift */,
 			);
 			path = SpriteKitGame;
 			sourceTree = "<group>";

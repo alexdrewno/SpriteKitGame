@@ -37,6 +37,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     var healthLabelNode : SKLabelNode!
     var flashRedNode : SKSpriteNode!
     var shootSound = AVAudioPlayer()
+    var spawnTimer : Timer? = nil
+    var countdown : CGFloat = 0.0
+    let countDownNode = SKLabelNode(text: "5")
     
     
     override func didMove(to view: SKView) {
@@ -53,7 +56,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         healthLabelNode.zPosition = 10
         healthLabelNode.fontSize = 30
         healthLabelNode.fontColor = UIColor.red
-    
+        
+   
+        countDownNode.fontName = "futura"
+        countDownNode.zPosition = 10
+        countDownNode.fontSize = 150
+        countDownNode.fontColor = UIColor.black
+
         
         background.position = CGPoint(x: 0,y: 0)
         background.zPosition = -1
@@ -289,7 +298,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     
     func startShooting()
     {
-        shootingTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameScene.spawnBullet), userInfo: nil, repeats: true)
+        shootingTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(GameScene.spawnBullet), userInfo: nil, repeats: true)
     }
     
     
@@ -323,9 +332,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
             if appDelegate.mpcManager.session.connectedPeers.count > 0
             {
                 appDelegate.mpcManager.sendData(dataToSend: "dead")
-                delay(5, closure: { 
+                    delay(5, closure: {
                     self.addChild(self.shooter)
                     self.health = 100
+                    self.healthLabelNode.text = "Health: \(self.health)"
                     self.dead = false
                     if self.appDelegate.mpcManager.position.x > 0
                     {
@@ -339,6 +349,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
             }
         }
     }
+    
+    func countDown()
+    {
+        
+        
+        countDownNode.position = shooter.position
+
+        if countDownNode.parent == nil
+        {
+            self.camera!.addChild(countDownNode)
+        }
+        
+        countdown -= 0.1
+        countDownNode.text = "\(countdown)"
+       
+        if countdown == 0
+        {
+            countdown = 5
+            spawnTimer!.invalidate()
+            if countDownNode.parent != nil
+            {
+                self.countDownNode.removeFromParent()
+            }
+        }
+        
+        
+        
+        
+    }
+    
     
     func hitDetected()
     {
