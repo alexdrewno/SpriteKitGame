@@ -37,7 +37,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     var rotation: CGFloat! = 0.0
     
     var shotBullet : Bool = false
-    
+    var spawn : Int = 0
     var vector : CGVector! = CGVector(dx:0,dy:0)
     var bulletPosition : CGPoint = CGPoint(x:0,y:0)
     var bulletRotation : CGFloat = 0

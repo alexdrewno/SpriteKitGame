@@ -52,6 +52,7 @@ class HomeViewController: UIViewController,  MPCManagerDelegate, UITableViewDele
         
         let acceptAction: UIAlertAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.default) { (alertAction) -> Void in
             self.appDelegate.mpcManager.invitationHandler(true, self.appDelegate.mpcManager.session)
+            self.appDelegate.mpcManager.spawn = 2
         }
         let decline = UIAlertAction(title: "Decline", style: .default) { (alertAction) in
             print("decline")

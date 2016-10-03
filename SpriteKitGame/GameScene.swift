@@ -114,9 +114,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
             shooter2.physicsBody = SKPhysicsBody(texture: shooter2.texture!, size: shooter2.size)
             shooter2.physicsBody?.affectedByGravity = false
             shooter2.physicsBody?.contactTestBitMask = (shooter2.physicsBody?.collisionBitMask)!
-            //shooter2.position = shooter.position
             shooter2.size = shooter.size
             addChild(shooter2)
+            
+            if appDelegate.mpcManager.spawn == 2
+            {
+                shooter.position = building2.position
+                shooter.zRotation = CGFloat(M_PI)
+            }
+            else
+            {
+                shooter.position = building.position
+            }
         }
         else
         {
@@ -128,10 +137,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         setupCamera()
         addPlayerConstraints()
         
-        addChild(box)
+        //addChild(box)
         addChild(building2)
         addChild(building)
-
         addChild(newCam)
         addChild(shooter)
         addChild(background)
