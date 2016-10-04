@@ -11,6 +11,7 @@ class HomeViewController: UIViewController,  MPCManagerDelegate, UITableViewDele
     @IBOutlet weak var multiplayerView: UIView!
     @IBOutlet weak var singleplayerView: UIView!
     
+    // set up the object locations on the view
     override func viewDidLoad() {
         appDelegate.mpcManager.delegate = self
         appDelegate.mpcManager.browser.startBrowsingForPeers()
@@ -31,6 +32,7 @@ class HomeViewController: UIViewController,  MPCManagerDelegate, UITableViewDele
         
     }
     
+    // both reload the data in the table view
     func foundPeer()
     {
         print("foundPeer")
@@ -44,6 +46,7 @@ class HomeViewController: UIViewController,  MPCManagerDelegate, UITableViewDele
         tableView.reloadData()
     }
     
+    // if the device can connect to another device create a pop up and allow player to join
     func invitationWasReceived(fromPeer: String)
     {
         print("invitationWasReceived")
@@ -67,6 +70,7 @@ class HomeViewController: UIViewController,  MPCManagerDelegate, UITableViewDele
         }
     }
     
+    // called if invitation was accepted and take player to game view
     func connectedWithPeer(peerID: MCPeerID)
     {
         print("connectedWithPeer")
@@ -76,6 +80,7 @@ class HomeViewController: UIViewController,  MPCManagerDelegate, UITableViewDele
 
     }
     
+    // table view set up
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         appDelegate.mpcManager.browser.invitePeer(appDelegate.mpcManager.foundPeers[indexPath.row], to: appDelegate.mpcManager.session, withContext: nil, timeout: 20)
     }

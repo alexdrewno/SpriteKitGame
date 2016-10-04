@@ -21,6 +21,7 @@ class StatsViewController: UIViewController {
     var gamesWon = 0
     var gamesLost = 0
     
+    // sets up the stats for future use
     override func viewDidLoad() {
         super.viewDidLoad()
         if (totalKills == 0 && totalDeaths == 0) {

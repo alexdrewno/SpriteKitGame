@@ -41,7 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     var countdown : CGFloat = 0.0
     let countDownNode = SKLabelNode(text: "5")
     
-    
+    // sets up the players and the objects in the view
     override func didMove(to view: SKView) {
         
         physicsWorld.contactDelegate = self
@@ -116,6 +116,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         shooter.physicsBody?.affectedByGravity = false
         shooter.physicsBody?.contactTestBitMask = (shooter.physicsBody?.collisionBitMask)!
         
+        // checks for the player getting hit
         if appDelegate.mpcManager.session.connectedPeers.count > 0
         {
             shooter2 = SKSpriteNode(imageNamed: "player.png")
@@ -146,12 +147,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         setupCamera()
         addPlayerConstraints()
         
-<<<<<<< Updated upstream
-        //addChild(box)
-=======
         addChild(box)
-        //addChild(building)
->>>>>>> Stashed changes
         addChild(building2)
         addChild(building)
         addChild(newCam)
@@ -181,7 +177,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
 
     }
 
-    
+    // spawns bullet
     func spawnBullet()
     {
         
@@ -220,6 +216,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         shootSound.play()
     }
     
+    // shows the enemy players bullet
     func enemyBulletShot(bulletPosition : CGPoint, vector: CGVector, rotation: CGFloat)
     {
         let bullet : SKSpriteNode! = SKSpriteNode(imageNamed: "Bullet.png")
@@ -241,6 +238,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         addChild(bullet)
     }
     
+    // checks collisions and damage to player and other objects
     func didBegin(_ contact: SKPhysicsContact) {
         if (contact.bodyA.node?.name == "bullet")
         {
@@ -327,10 +325,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         }
     }
     
+    // checks to see if the player's heath is 0
     func checkIfDead()
     {
         healthLabelNode.text = "Health: \(health)"
-        if health == 0
+        if health <= 0
         {
             shooter.removeFromParent()
             dead = true
@@ -384,7 +383,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
         
     }
     
-    
+    // if the player is hit screen will flash to indicate damage
     func hitDetected()
     {
         camera!.addChild(flashRedNode)
@@ -399,6 +398,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, StreamDelegate{
     DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
     }
 
+    // checks for either player dead and the locations of the bullets
     override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
         if appDelegate.mpcManager.session.connectedPeers.count > 0

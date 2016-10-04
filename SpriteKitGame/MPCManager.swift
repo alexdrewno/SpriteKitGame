@@ -4,7 +4,7 @@ import UIKit
 import MultipeerConnectivity
 import GameKit
 
-
+// delegate allowing for setup of the connections between devices
 protocol MPCManagerDelegate {
     func foundPeer()
     
@@ -15,7 +15,7 @@ protocol MPCManagerDelegate {
     func connectedWithPeer(peerID: MCPeerID)
 }
 
-
+// this class is for the set up of the conectivity for players to conect to each other
 class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, MCNearbyServiceAdvertiserDelegate, StreamDelegate {
     
     var delegate: MPCManagerDelegate?
@@ -44,7 +44,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     var dead = false
     
-    
+    // set up data for other players to see
     override init() {
         super.init()
         
@@ -123,7 +123,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         certificateHandler(true)
     }
     
-    
+    // holds the data for the current sesion that is being played such as the bullet and position and rotations
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         let dictionary: [String: AnyObject] = ["data": data as AnyObject, "fromPeer": peerID]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "receivedMPCDataNotification"), object: dictionary)
@@ -150,7 +150,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         
     }
     
-    
+    // functions that do nothing but need to be in as to make the compiler not crash
     func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) { }
     
     func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL, withError error: Error?) { }
@@ -197,6 +197,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         }
     }
     
+    // sends data to the other device via the sesion
     func sendData(dataToSend: String)
     {
          //print("sending... : " + dataToSend)

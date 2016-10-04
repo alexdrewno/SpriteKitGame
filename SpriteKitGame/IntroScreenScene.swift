@@ -13,6 +13,7 @@ class IntroScreenScene: SKScene {
     var iDelegate : introDelegate?
     var backgroundNode : SKSpriteNode!
     
+    // scene set up
     override func didMove(to view: SKView) {
         backgroundColor = UIColor.black
         tdsNode = SKLabelNode(text: "TDS: Shooter")
@@ -38,6 +39,7 @@ class IntroScreenScene: SKScene {
         addChild(backgroundNode)
     }
     
+    // allows fo rhte start button to be pressed
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches
         {

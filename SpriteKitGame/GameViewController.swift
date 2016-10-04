@@ -3,7 +3,7 @@
 //  SpriteKitGame
 //
 //  Created by Alex Drewno on 9/14/16.
-//  Copyright (c) 2016 Alex Drewno. All rights reserved.
+//  Copyright (c) 2016 Alex Drewno, Ty Victorson. All rights reserved.
 //
 
 import UIKit
@@ -36,7 +36,7 @@ class GameViewController: UIViewController {
         
         skView.presentScene(scene)
         
-        
+        // set up the touch circles
         rightCircle.clipsToBounds = true
         leftCircle.clipsToBounds = true
         
@@ -81,7 +81,7 @@ class GameViewController: UIViewController {
     }
     
     
-    
+    // checks for the locations on the view that the player is touching and creates the circle under the area of where the touch is
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let firstTouchLocation = touches.first?.location(in: self.view)
         
@@ -131,6 +131,7 @@ class GameViewController: UIViewController {
 
     }
     
+    // takes the moving touch and moves the circles with the touch
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches
         {
@@ -262,6 +263,7 @@ class GameViewController: UIViewController {
         
     }
     
+    // checks to see if a touch has ended and if so removes the circle under that touch
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let endingTouchLocation = touches.first!.location(in: self.view)
